@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tijuana — Acesso do admin</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/JS/index.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="main-container">
+
+            <!--SUBSCRIBE CONTAINER-->
+            <div class="admin-container">
+                <div class="admin-name-phone">
+                    <div class="admin-name">nome</div>
+                    <div class="admin-name">whatsapp</div>
+                </div>
+                <div class="admin-list-overflow">
+                    {{#each convidados}}
+                        <div class="admin-list">
+                            <div class="admin-name-phone-list">
+                                {{nome}}
+                            </div>
+                            <div class="admin-name-phone-list">
+                                {{telefone}}
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+            <form class="button-send" action="/limpar" method="post">
+                <input type="submit" class="limpar" value="limpar lista">
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tijuana — Lounge e Tabacaria</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/JS/index.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="main-container">
+
+            <!--MENU CONTAINER-->
+            <section class="section menu show">
+                <div class="menu-genre-container">
+                    <div class="menu-list">
+                        <div class="menu-list-id">01</div>
+                        <div class="img-container">
+                            <img id="imagem" src="imagens/mc_kevinho_show.jpg">
+                        </div>
+                        <div class="menu-list-name">tijuana</div>
+                    </div>
+                    <div class="menu-list">
+                        <div class="menu-list-id">02</div>
+                        <div class="img-container">
+                            <img id="imagem" src="imagens/mc_pipokinha_show.jpg">
+                        </div>
+                        <div class="menu-list-name">eventos</div>
+                    </div>
+                    <div class="menu-list">
+                        <div class="menu-list-id">03</div>
+                        <div class="img-container">
+                            <img  id="imagem" src="/imagens/narguile_fundo_preto.jpg" alt="">
+                        </div>
+                        <div class="menu-list-name">bebidas</div>
+                    </div>
+                </div>
+                <div class="elipse-more">
+                    <a href="">TIJUANA</a>
+                </div>
+            </section>
+
+            <!--SUBSCRIBE CONTAINER-->
+            <section class="section container show">
+                <div class="container_1">
+                    <!-- FORM -->
+                    <form class="form" action="/cadastrar" method="post" enctype="multipart/form-data">
+                        <div class="top"><h3>entre na lista:</h3></div>
+                        <div class="name-container">
+                            <h3>nome*</h3>
+                            <input type="text" name="nome" placeholder="digite seu nome">
+                        </div>
+                            <!--PHONE NUMBER-->
+                        <div class="phone-container">
+                            <h3>whatsapp</h3>
+                            <input type="text" name="telefone" placeholder="11 9 0000-0000">
+                        </div>
+                        <div class="button-send">
+                            <input type="submit" class="enviar" value="cadastrar">
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
