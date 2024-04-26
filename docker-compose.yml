@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  frontend:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./views:/usr/share/nginx/html
+      - ./css:/usr/share/nginx/html/css
+      - ./js:/usr/share/nginx/html/js
+      - ./images:/usr/share/nginx/html/images
+    restart: always
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./views:/views
+      - ./css:/css
+      - ./js:/js
+      - ./images:/images
+    depends_on:
+      - database
+    environment:
+      - NODE_ENV=production
+
+  database:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 2!7?0y8U#+%nMx@
+      MYSQL_DATABASE: tijuana
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 2!7?0y8U#+%nMx@
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

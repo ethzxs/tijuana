@@ -33,7 +33,7 @@ app.set('views', './views');
 
 // SQL CONNECTION CONFIG
 const conexao = mysql.createConnection({
-    host: 'localhost',
+    host: '54.94.67.8',
     user: 'root',
     password: '2!7?0y8U#+%nMx@',
     database: 'tijuana'
@@ -104,6 +104,6 @@ conexao.connect(erro => {
 });
 
 // Iniciar o servidor na porta 3000
-app.listen(3000, () => {
-    console.log('Servidor iniciado na porta 3000');
+app.listen(3306, () => {
+    console.log('Servidor iniciado na porta 3306');
 });
