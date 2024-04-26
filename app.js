@@ -33,7 +33,7 @@ app.set('views', './views');
 
 // SQL CONNECTION CONFIG
 const conexao = mysql.createConnection({
-    host: '54.94.67.8',
+    host: 'localhost',
     user: 'root',
     password: '2!7?0y8U#+%nMx@',
     database: 'tijuana'
@@ -94,16 +94,30 @@ app.post('/limpar', (req, res) => {
     });
 });
 
+// Criar um novo objeto Date
+const dataAtual = new Date();
+
+// Obter a hora e os minutos
+const hora = dataAtual.getHours();
+const minutos = dataAtual.getMinutes();
+
+// Formatar a hora e os minutos
+const horaFormatada = hora < 10 ? '0' + hora : hora; // Adiciona um zero à esquerda se for menor que 10
+const minutosFormatados = minutos < 10 ? '0' + minutos : minutos; // Adiciona um zero à esquerda se for menor que 10
+
 // Testar a conexão com o banco de dados
 conexao.connect(erro => {
     if (erro) {
         console.error('Erro ao conectar ao banco de dados:', erro);
         return;
     }
-    console.log('Conexão bem-sucedida com o banco de dados!');
+    console.log(`
+    Conexão bem-sucedida com o banco de dados! 26/04 at ` + horaFormatada + ':' + minutosFormatados + `
+    `);
 });
 
-// Iniciar o servidor na porta 3000
-app.listen(3306, () => {
-    console.log('Servidor iniciado na porta 3306');
+// Iniciar o servidor na porta 8080
+app.listen(8080, () => {
+    console.log(`
+    Servidor iniciado na porta 8080`);
 });
